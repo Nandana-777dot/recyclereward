@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoQuest – Recycle. Restore. Repeat.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+
+  <!-- ── NAV ────────────────────────────────────────────────────────────── -->
+  <nav>
+    <div class="logo">Eco<span>Quest</span></div>
+    <ul>
+      <li><a href="#how">How It Works</a></li>
+      <li><a href="#guide">Guide</a></li>
+      <li><a href="#join" class="nav-cta">Join the Quest</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── HERO ───────────────────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <div class="hero-content">
+      <div class="hero-tag">🌿 The Recycling Revolution Starts Here</div>
+      <h1>Recycle.<br><em>Restore.</em>Repeat.</h1>
+      <p class="hero-desc">EcoQuest turns everyday recycling into a meaningful mission. Learn what to recycle, reduce waste, and become part of a community rebuilding the planet — one item at a time.</p>
+      <div class="hero-actions">
+        <a href="#join" class="btn-primary">Start Your Quest →</a>
+        <a href="#guide" class="btn-ghost">
+          Explore the Guide
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="orbit-container">
+        <div class="orbit-ring"></div>
+        <div class="orbit-ring"></div>
+        <div class="orbit-ring"></div>
+        <div class="orbit-item" style="top:0;left:50%;transform:translateX(-50%)">♻️</div>
+        <div class="orbit-item" style="bottom:0;left:50%;transform:translateX(-50%);animation:counterSpinBottom 20s linear infinite reverse">🌱</div>
+        <div class="orbit-item" style="left:0;top:50%;transform:translateY(-50%);animation:counterSpinLeft 14s linear infinite reverse">💧</div>
+        <div class="orbit-item" style="right:0;top:50%;transform:translateY(-50%);animation:counterSpinRight 14s linear infinite">🔋</div>
+        <div class="orbit-center">🌍</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── STATS ──────────────────────────────────────────────────────────── -->
+  <div class="stats reveal">
+    <div class="stat">
+      <div class="stat-num">2.3B</div>
+      <div class="stat-label">Tons of waste generated globally each year</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">32%</div>
+      <div class="stat-label">Of waste is properly recycled or composted</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">75%</div>
+      <div class="stat-label">Of waste is actually recyclable</div>
+    </div>
+  </div>
+
+  <!-- ── HOW IT WORKS ───────────────────────────────────────────────────── -->
+  <section class="section" id="how">
+    <div class="section-tag">↳ The Process</div>
+    <h2 class="section-title reveal">Recycling made simple, impactful, and rewarding.</h2>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <div class="step-icon">🔍</div>
+        <h3>Identify Your Waste</h3>
+        <p>Use our smart guide to quickly identify what type of waste you have and how it should be handled in your area.</p>
+      </div>
+      <div class="step reveal" style="transition-delay:0.15s">
+        <div class="step-num">02</div>
+        <div class="step-icon">🗂️</div>
+        <h3>Sort &amp; Prepare</h3>
+        <p>Follow simple preparation steps — rinse, flatten, separate. Proper sorting dramatically increases recycling effectiveness.</p>
+      </div>
+      <div class="step reveal" style="transition-delay:0.3s">
+        <div class="step-num">03</div>
+        <div class="step-icon">📍</div>
+        <h3>Drop Off &amp; Track</h3>
+        <p>Find your nearest collection point and log your contribution. Watch your environmental impact grow over time.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── RECYCLING GUIDE ────────────────────────────────────────────────── -->
+  <section class="guide-section" id="guide">
+    <div class="guide-inner">
+      <div class="section-tag">↳ Quick Reference</div>
+      <h2 class="section-title reveal">What can you<br>recycle today?</h2>
+      <div class="categories">
+        <div class="cat-card green reveal">
+          <span class="cat-badge">Always</span>
+          <span class="cat-emoji">📦</span>
+          <h3>Paper &amp; Cardboard</h3>
+          <p>Newspapers, boxes, envelopes. Keep dry and flatten before recycling.</p>
+        </div>
+        <div class="cat-card blue reveal" style="transition-delay:0.1s">
+          <span class="cat-badge">Rinse First</span>
+          <span class="cat-emoji">🍾</span>
+          <h3>Glass &amp; Plastic</h3>
+          <p>Bottles, jars, containers. Remove lids and rinse clean before sorting.</p>
+        </div>
+        <div class="cat-card yellow reveal" style="transition-delay:0.2s">
+          <span class="cat-badge">Crush It</span>
+          <span class="cat-emoji">🥫</span>
+          <h3>Metals &amp; Cans</h3>
+          <p>Aluminium cans, tin cans, foil. Crush cans to save space in your bin.</p>
+        </div>
+        <div class="cat-card red reveal" style="transition-delay:0.3s">
+          <span class="cat-badge">Special Drop</span>
+          <span class="cat-emoji">🔌</span>
+          <h3>Electronics</h3>
+          <p>Phones, batteries, cables. Requires special e-waste drop-off. Never bin.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ────────────────────────────────────────────────────────────── -->
+  <section class="cta-section" id="join">
+    <h2 class="reveal">Ready to start<br>your <span>EcoQuest?</span></h2>
+    <p class="reveal">Join thousands of people already making a difference in their communities.</p>
+    <div class="cta-buttons reveal">
+      <a href="index.html" class="btn-primary">Create Free Account</a>
+      <a href="#how" class="btn-outline">Learn More</a>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────────────────── -->
+  <footer>
+    <div class="logo">Eco<span>Quest</span></div>
+    <p>© 2025 EcoQuest. Building a cleaner world.</p>
+    <div class="footer-links">
+      <a href="#">About</a>
+      <a href="#">Privacy</a>
+      <a href="#">Contact</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

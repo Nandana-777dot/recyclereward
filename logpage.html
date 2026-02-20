@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>EcoQuest - Log Your Recycled Waste</title>
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary":          "#2ecc70",
+            "background-light": "#f6f8f7",
+            "background-dark":  "#131f18",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg":      "0.5rem",
+            "xl":      "0.75rem",
+            "full":    "9999px"
+          },
+        },
+      },
+    }
+  </script>
+
+  <link rel="stylesheet" href="logwaste.css"/>
+</head>
+
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col bg-mesh">
+
+  <!-- ── TOP NAVBAR ──────────────────────────────────────────────────────── -->
+  <nav class="sticky top-0 z-50 glass-card border-b border-primary/10 px-4 py-3 flex items-center justify-between">
+    <div class="flex items-center gap-2">
+      <div class="bg-primary/20 p-1.5 rounded-lg">
+        <span class="material-symbols-outlined text-primary text-2xl">eco</span>
+      </div>
+      <span class="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100">EcoQuest</span>
+    </div>
+    <div class="flex items-center gap-4 sm:gap-6">
+      <a class="flex flex-col items-center gap-0.5 text-primary" href="#">
+        <span class="material-symbols-outlined">dashboard</span>
+        <span class="text-[10px] font-medium uppercase tracking-wider hidden sm:block">Dashboard</span>
+      </a>
+      <a class="flex flex-col items-center gap-0.5 text-slate-500 hover:text-primary transition-colors" href="#">
+        <span class="material-symbols-outlined">leaderboard</span>
+        <span class="text-[10px] font-medium uppercase tracking-wider hidden sm:block">Rankings</span>
+      </a>
+      <a class="flex flex-col items-center gap-0.5 text-slate-500 hover:text-primary transition-colors" href="#">
+        <span class="material-symbols-outlined">account_circle</span>
+        <span class="text-[10px] font-medium uppercase tracking-wider hidden sm:block">Profile</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ── MAIN CONTENT ────────────────────────────────────────────────────── -->
+  <main class="flex-1 flex flex-col items-center justify-center px-4 py-8 max-w-lg mx-auto w-full relative">
+
+    <!-- Decorative background icons -->
+    <span class="material-symbols-outlined absolute top-10 left-[-20px] text-primary/5 text-9xl -rotate-12 pointer-events-none select-none">recycling</span>
+    <span class="material-symbols-outlined absolute bottom-20 right-[-20px] text-primary/5 text-8xl rotate-12 pointer-events-none select-none">potted_plant</span>
+
+    <header class="text-center mb-10 w-full">
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-2">
+        Log Your Recycled Waste
+      </h1>
+      <p class="text-slate-500 dark:text-slate-400 text-sm sm:text-base">Turn your daily recycling into points and impact!</p>
+    </header>
+
+    <!-- ── FORM CARD ──────────────────────────────────────────────────────── -->
+    <div class="glass-card w-full rounded-2xl p-6 sm:p-8 shadow-2xl relative overflow-hidden">
+
+      <!-- Decorative corner icon -->
+      <div class="absolute top-0 right-0 p-4 opacity-10">
+        <span class="material-symbols-outlined text-6xl text-primary">add_circle</span>
+      </div>
+
+      <form id="log-form" class="space-y-6 relative z-10">
+
+        <!-- Waste Type -->
+        <div class="space-y-2">
+          <label class="flex items-center gap-2 text-sm font-semibold text-slate-700 dark:text-slate-300 ml-1">
+            <span class="material-symbols-outlined text-primary text-lg">category</span>
+            Select Waste Type
+          </label>
+          <div class="relative">
+            <select
+              id="waste-type"
+              class="w-full bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl py-4 px-4 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none"
+            >
+              <option disabled selected value="">Choose a category...</option>
+              <option value="plastic">Plastic Bottles &amp; Containers</option>
+              <option value="paper">Paper &amp; Cardboard</option>
+              <option value="glass">Glass Jars &amp; Bottles</option>
+              <option value="metal">Aluminum &amp; Steel Cans</option>
+              <option value="organic">Organic Food Waste</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Quantity -->
+        <div class="space-y-2">
+          <label class="flex items-center gap-2 text-sm font-semibold text-slate-700 dark:text-slate-300 ml-1">
+            <span class="material-symbols-outlined text-primary text-lg">weight</span>
+            Quantity (kg)
+          </label>
+          <div class="relative flex items-center">
+            <input
+              id="waste-quantity"
+              class="w-full bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl py-4 px-4 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none placeholder:text-slate-500"
+              min="0"
+              placeholder="0.0"
+              step="0.1"
+              type="number"
+            />
+            <span class="absolute right-4 text-slate-400 font-bold">KG</span>
+          </div>
+        </div>
+
+        <!-- Submit -->
+        <button
+          id="btn-add-waste"
+          class="w-full neo-glow bg-gradient-to-r from-primary to-[#d4f836] hover:brightness-110 active:scale-[0.98] transition-all text-[#131f18] font-bold py-4 rounded-xl text-lg flex items-center justify-center gap-2"
+          type="button"
+        >
+          <span class="material-symbols-outlined font-bold">add_task</span>
+          Add Waste
+        </button>
+
+      </form>
+
+      <!-- ── PREVIEW STATS ──────────────────────────────────────────────── -->
+      <div class="mt-10 grid grid-cols-2 gap-4">
+        <div class="bg-primary/5 border border-primary/20 rounded-xl p-4 text-center">
+          <p class="text-[10px] uppercase font-bold text-primary tracking-widest mb-1">Points to Earn</p>
+          <div class="flex items-center justify-center gap-1">
+            <span id="preview-xp" class="text-2xl font-black text-slate-900 dark:text-white">--</span>
+            <span class="text-primary font-bold">XP</span>
+          </div>
+        </div>
+        <div class="bg-primary/5 border border-primary/20 rounded-xl p-4 text-center">
+          <p class="text-[10px] uppercase font-bold text-primary tracking-widest mb-1">CO2 Offset</p>
+          <div class="flex items-center justify-center gap-1">
+            <span id="preview-co2" class="text-2xl font-black text-slate-900 dark:text-white">--</span>
+            <span class="text-primary font-bold">kg</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="mt-8 text-slate-500 dark:text-slate-500 text-xs text-center px-6">
+      Help us build a cleaner future. Every gram recorded contributes to global sustainability targets.
+    </p>
+
+  </main>
+
+  <!-- ── BOTTOM MOBILE NAV ──────────────────────────────────────────────── -->
+  <div class="sm:hidden mt-auto border-t border-primary/10 glass-card px-4 pb-6 pt-3 flex items-center justify-around">
+    <a class="flex flex-col items-center gap-1 text-primary" href="#">
+      <span class="material-symbols-outlined">home</span>
+      <p class="text-[10px] font-bold uppercase">Home</p>
+    </a>
+    <a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+      <span class="material-symbols-outlined">emoji_events</span>
+      <p class="text-[10px] font-bold uppercase">Leader</p>
+    </a>
+    <a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+      <span class="material-symbols-outlined">forest</span>
+      <p class="text-[10px] font-bold uppercase">Forest</p>
+    </a>
+    <a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+      <span class="material-symbols-outlined">person</span>
+      <p class="text-[10px] font-bold uppercase">Profile</p>
+    </a>
+  </div>
+
+  <script src="logwaste.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+/* ── BODY ───────────────────────────────────────────────────────────────── */
+
+body {
+  min-height: max(884px, 100dvh);
+}
+
+
+/* ── GLASS CARD ─────────────────────────────────────────────────────────── */
+
+.glass-card {
+  background: rgba(25, 35, 30, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(46, 204, 112, 0.1);
+}
+
+
+/* ── NEO GLOW ───────────────────────────────────────────────────────────── */
+
+.neo-glow {
+  box-shadow: 0 0 15px rgba(46, 204, 112, 0.4);
+}
+
+
+/* ── BACKGROUND MESH ────────────────────────────────────────────────────── */
+
+.bg-mesh {
+  background-image:
+    radial-gradient(at 0%   0%,   rgba(46, 204, 112, 0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(46, 204, 112, 0.10) 0px, transparent 50%);
+}
+
+
+/* ── CUSTOM SELECT ARROW ────────────────────────────────────────────────── */
+
+select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%232ecc70' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e") !important;
+  background-position: right 0.5rem center !important;
+  background-repeat: no-repeat !important;
+  background-size: 1.5em 1.5em !important;
+  padding-right: 2.5rem !important;
+  appearance: none !important;
+}
+
+
+/* ── BUTTON HOVER ───────────────────────────────────────────────────────── */
+
+#btn-add-waste {
+  transition: filter 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+#btn-add-waste:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 0 28px rgba(46, 204, 112, 0.6);
+}
+
+#btn-add-waste:active {
+  transform: scale(0.98);
+}
+
+
+/* ── PREVIEW STATS TRANSITION ───────────────────────────────────────────── */
+
+#preview-xp,
+#preview-co2 {
+  transition: all 0.25s ease;
+}
+
+#preview-xp.updated,
+#preview-co2.updated {
+  color: #2ecc70;
+}
+
+
+/* ── INPUT FOCUS GLOW ───────────────────────────────────────────────────── */
+
+#waste-quantity:focus,
+#waste-type:focus {
+  box-shadow: 0 0 0 3px rgba(46, 204, 112, 0.15);
+}

@@ -1,0 +1,78 @@
+/* ── BODY ───────────────────────────────────────────────────────────────── */
+
+body {
+  min-height: max(884px, 100dvh);
+}
+
+
+/* ── GLASS CARD ─────────────────────────────────────────────────────────── */
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+/* ── NEON GLOW EFFECTS ──────────────────────────────────────────────────── */
+
+.neon-glow-primary {
+  box-shadow: 0 0 15px rgba(46, 204, 112, 0.4);
+}
+
+.neon-glow-text {
+  text-shadow: 0 0 8px rgba(46, 204, 112, 0.6);
+}
+
+
+/* ── BACKGROUND MIST ────────────────────────────────────────────────────── */
+
+.bg-mist {
+  background:
+    radial-gradient(circle at 20% 30%, rgba(46, 204, 112, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(212, 252, 121, 0.10) 0%, transparent 50%);
+}
+
+
+/* ── BOTTOM NAV ACTIVE STATE ────────────────────────────────────────────── */
+
+.nav-link.active {
+  color: #2ecc70;
+}
+
+.nav-link.active .material-symbols-outlined {
+  font-variation-settings: 'FILL' 1;
+}
+
+
+/* ── XP BAR TRANSITION ──────────────────────────────────────────────────── */
+
+#xp-bar {
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+/* ── BUTTON HOVER STATES ────────────────────────────────────────────────── */
+
+#btn-log-waste {
+  transition: transform 0.15s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+#btn-log-waste:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(46, 204, 112, 0.6);
+  filter: brightness(1.05);
+}
+
+#btn-log-waste:active {
+  transform: scale(0.95);
+}
+
+#btn-leaderboard {
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+#btn-leaderboard:hover {
+  background: rgba(255, 255, 255, 0.06);
+}

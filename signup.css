@@ -1,0 +1,19 @@
+/* ── Custom base styles ─────────────────────────────────────────────────────── */
+body {
+    font-family: 'Inter', sans-serif;
+    min-height: max(884px, 100dvh);
+}
+
+/* Glass card effect */
+.glass-card {
+    background: rgba(19, 31, 24, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(46, 204, 112, 0.1);
+}
+
+/* Hero radial gradient background */
+.hero-gradient {
+    background:
+        radial-gradient(circle at top right,  rgba(46, 204, 112, 0.15), transparent),
+        radial-gradient(circle at bottom left, rgba(241, 196, 15, 0.05),  transparent);
+}

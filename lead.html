@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>EcoQuest Leaderboard | Community Impact</title>
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary":          "#2ecc70",
+            "accent-yellow":    "#f1c40f",
+            "background-light": "#f6f8f7",
+            "background-dark":  "#0a0f0c",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg":      "0.5rem",
+            "xl":      "0.75rem",
+            "2xl":     "1rem",
+            "full":    "9999px"
+          },
+        },
+      },
+    }
+  </script>
+
+  <link rel="stylesheet" href="leaderboard.css"/>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display min-h-screen selection:bg-primary/30">
+
+  <!-- Background Decoration -->
+  <div class="fixed inset-0 bg-gradient-mesh -z-10"></div>
+
+  <!-- ── TOP NAVIGATION ─────────────────────────────────────────────────── -->
+  <nav class="sticky top-0 z-50 glass border-b border-white/5 px-4 py-3 md:px-8">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+
+      <div class="flex items-center gap-2">
+        <div class="bg-primary p-1.5 rounded-lg flex items-center justify-center text-background-dark">
+          <span class="material-symbols-outlined font-bold">eco</span>
+        </div>
+        <span class="text-xl font-extrabold tracking-tight text-white">EcoQuest</span>
+      </div>
+
+      <div class="hidden md:flex items-center gap-8">
+        <a class="text-sm font-semibold text-slate-400 hover:text-primary transition-colors" href="#">Dashboard</a>
+        <a class="text-sm font-semibold text-slate-400 hover:text-primary transition-colors" href="#">Log Waste</a>
+        <a class="text-sm font-semibold text-primary" href="#">Leaderboard</a>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <button class="flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-lg text-primary text-sm font-bold hover:bg-primary/20 transition-all">
+          <span class="material-symbols-outlined text-sm">person</span>
+          Profile
+        </button>
+        <button class="md:hidden text-white" id="menu-btn">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- ── MAIN ───────────────────────────────────────────────────────────── -->
+  <main class="max-w-5xl mx-auto px-4 py-12">
+
+    <!-- Header & Toggle -->
+    <div class="text-center mb-12">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">Community Leaderboard</h1>
+      <div class="inline-flex p-1 bg-white/5 rounded-xl border border-white/10 glass">
+        <button id="btn-weekly" class="tab-btn px-6 py-2 rounded-lg text-sm font-bold bg-primary text-background-dark transition-all shadow-lg shadow-primary/20">Weekly</button>
+        <button id="btn-alltime" class="tab-btn px-6 py-2 rounded-lg text-sm font-bold text-slate-400 hover:text-white transition-all">All-Time</button>
+      </div>
+    </div>
+
+    <!-- ── LEADERBOARD CHART ───────────────────────────────────────────── -->
+    <div class="glass rounded-3xl p-6 md:p-10 mb-12 relative overflow-hidden">
+
+      <!-- Decorative icon -->
+      <div class="absolute top-0 right-0 p-8 opacity-10 pointer-events-none">
+        <span class="material-symbols-outlined text-9xl">workspace_premium</span>
+      </div>
+
+      <!-- Vertical Bar Chart -->
+      <div class="flex items-end justify-between h-[400px] gap-2 md:gap-6 border-b border-white/10 pb-2 relative" id="bar-chart">
+
+        <!-- 4th Place -->
+        <div class="flex flex-col items-center flex-1 group">
+          <div class="text-xs font-bold text-slate-500 mb-2" data-label>9.2k</div>
+          <div class="bar w-full bg-gradient-to-t from-emerald-900 to-primary/40 rounded-t-xl transition-all duration-700" style="height:45%"></div>
+          <div class="mt-4 text-center">
+            <p class="text-sm font-bold text-white">Sam</p>
+            <p class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">4th</p>
+          </div>
+        </div>
+
+        <!-- 2nd Place (User Highlight) -->
+        <div class="flex flex-col items-center flex-1 group relative">
+          <div class="absolute -top-12 px-3 py-1 bg-primary text-background-dark rounded-full text-[10px] font-black uppercase tracking-tighter bar-glow">YOU</div>
+          <div class="text-xs font-bold text-primary mb-2" data-label>14.8k</div>
+          <div class="bar w-full bg-gradient-to-t from-primary/20 to-primary rounded-t-xl transition-all duration-700 bar-glow" style="height:75%"></div>
+          <div class="mt-4 text-center">
+            <p class="text-sm font-bold text-primary">Alex</p>
+            <p class="text-[10px] uppercase tracking-widest text-primary/80 font-bold">2nd</p>
+          </div>
+        </div>
+
+        <!-- 1st Place -->
+        <div class="flex flex-col items-center flex-1 group relative">
+          <div class="absolute -top-10 animate-bounce">
+            <span class="material-symbols-outlined text-accent-yellow text-3xl crown-float">workspace_premium</span>
+          </div>
+          <div class="text-xs font-bold text-accent-yellow mb-2" data-label>18.5k</div>
+          <div class="bar w-full bg-gradient-to-t from-accent-yellow/40 to-accent-yellow rounded-t-xl transition-all duration-700 shadow-[0_0_30px_rgba(241,196,15,0.2)]" style="height:95%"></div>
+          <div class="mt-4 text-center">
+            <p class="text-sm font-bold text-accent-yellow">Casey</p>
+            <p class="text-[10px] uppercase tracking-widest text-accent-yellow/80 font-bold">1st</p>
+          </div>
+        </div>
+
+        <!-- 3rd Place -->
+        <div class="flex flex-col items-center flex-1 group">
+          <div class="text-xs font-bold text-slate-300 mb-2" data-label>12.1k</div>
+          <div class="bar w-full bg-gradient-to-t from-primary/10 to-primary/60 rounded-t-xl transition-all duration-700" style="height:60%"></div>
+          <div class="mt-4 text-center">
+            <p class="text-sm font-bold text-white">Taylor</p>
+            <p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold">3rd</p>
+          </div>
+        </div>
+
+        <!-- 5th Place -->
+        <div class="flex flex-col items-center flex-1 group">
+          <div class="text-xs font-bold text-slate-500 mb-2" data-label>8.4k</div>
+          <div class="bar w-full bg-gradient-to-t from-slate-800 to-slate-700 rounded-t-xl transition-all duration-700 opacity-60" style="height:35%"></div>
+          <div class="mt-4 text-center">
+            <p class="text-sm font-bold text-slate-400">Jordan</p>
+            <p class="text-[10px] uppercase tracking-widest text-slate-600 font-bold">5th</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── COMMUNITY STAT CARDS ───────────────────────────────────────── -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <div class="glass rounded-2xl p-6 group hover:bg-white/5 transition-all">
+        <div class="flex items-start justify-between mb-4">
+          <div class="p-3 bg-primary/10 rounded-xl text-primary">
+            <span class="material-symbols-outlined text-3xl">recycling</span>
+          </div>
+          <span class="text-primary text-xs font-bold bg-primary/10 px-2 py-1 rounded">+12%</span>
+        </div>
+        <p class="text-slate-400 text-sm font-medium mb-1">Total Community Points</p>
+        <h3 class="text-2xl font-bold text-white tracking-tight">1,240,500</h3>
+      </div>
+
+      <div class="glass rounded-2xl p-6 group hover:bg-white/5 transition-all">
+        <div class="flex items-start justify-between mb-4">
+          <div class="p-3 bg-primary/10 rounded-xl text-primary">
+            <span class="material-symbols-outlined text-3xl">energy_savings_leaf</span>
+          </div>
+          <span class="text-primary text-xs font-bold bg-primary/10 px-2 py-1 rounded">+8.2k</span>
+        </div>
+        <p class="text-slate-400 text-sm font-medium mb-1">Total Waste Collected</p>
+        <h3 class="text-2xl font-bold text-white tracking-tight">15,200 <span class="text-lg font-medium text-slate-500">kg</span></h3>
+      </div>
+
+      <div class="glass rounded-2xl p-6 group hover:bg-white/5 transition-all">
+        <div class="flex items-start justify-between mb-4">
+          <div class="p-3 bg-primary/10 rounded-xl text-primary">
+            <span class="material-symbols-outlined text-3xl">forest</span>
+          </div>
+          <span class="text-primary text-xs font-bold bg-primary/10 px-2 py-1 rounded">+450</span>
+        </div>
+        <p class="text-slate-400 text-sm font-medium mb-1">Total CO2 Saved</p>
+        <h3 class="text-2xl font-bold text-white tracking-tight">4,500 <span class="text-lg font-medium text-slate-500">kg</span></h3>
+      </div>
+
+    </div>
+
+    <!-- ── CALL TO ACTION ─────────────────────────────────────────────── -->
+    <div class="mt-16 text-center bg-primary/5 rounded-3xl p-8 border border-primary/10 glass">
+      <h2 class="text-2xl font-bold text-white mb-2">Ready to climb the ranks?</h2>
+      <p class="text-slate-400 mb-6">Every piece of waste you log helps the community and earns you points.</p>
+      <button id="btn-log-waste" class="px-8 py-3 bg-primary text-background-dark font-black rounded-xl hover:scale-105 active:scale-95 transition-all shadow-xl shadow-primary/20">
+        LOG WASTE NOW
+      </button>
+    </div>
+
+  </main>
+
+  <!-- ── BOTTOM NAVIGATION (Mobile Only) ───────────────────────────────── -->
+  <div class="md:hidden fixed bottom-0 left-0 right-0 glass border-t border-white/10 px-6 py-4 flex items-center justify-between z-50">
+    <a class="text-slate-500 flex flex-col items-center gap-1" href="#">
+      <span class="material-symbols-outlined">home</span>
+      <span class="text-[10px] font-bold">Home</span>
+    </a>
+    <a class="text-slate-500 flex flex-col items-center gap-1" href="#">
+      <span class="material-symbols-outlined">add_circle</span>
+      <span class="text-[10px] font-bold">Log</span>
+    </a>
+    <a class="text-primary flex flex-col items-center gap-1" href="#">
+      <span class="material-symbols-outlined">emoji_events</span>
+      <span class="text-[10px] font-bold">Rank</span>
+    </a>
+    <a class="text-slate-500 flex flex-col items-center gap-1" href="#">
+      <span class="material-symbols-outlined">insights</span>
+      <span class="text-[10px] font-bold">Stats</span>
+    </a>
+  </div>
+
+  <!-- Footer space for mobile nav -->
+  <div class="h-20 md:hidden"></div>
+
+  <script src="leaderboard.js"></script>
+</body>
+</html>

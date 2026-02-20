@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>EcoQuest - Join the Journey</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind config -->
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary":          "#2ecc70",
+            "accent-yellow":    "#f1c40f",
+            "background-light": "#f6f8f7",
+            "background-dark":  "#131f18",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg":      "0.5rem",
+            "xl":      "0.75rem",
+            "2xl":     "1rem",
+            "full":    "9999px"
+          },
+        },
+      },
+    }
+  </script>
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="signup.css"/>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col font-display hero-gradient">
+
+  <!-- ── HEADER ─────────────────────────────────────────────────────────────── -->
+  <header class="w-full p-6 flex justify-between items-center max-w-7xl mx-auto">
+    <div class="flex items-center gap-2">
+      <span class="material-symbols-outlined text-primary text-3xl">energy_savings_leaf</span>
+      <span class="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100">EcoQuest</span>
+    </div>
+    <div class="hidden md:flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
+      <span class="material-symbols-outlined text-primary text-sm">stars</span>
+      <span class="text-xs font-semibold uppercase tracking-wider text-primary">Level 1 Novice</span>
+    </div>
+  </header>
+
+  <!-- ── MAIN ───────────────────────────────────────────────────────────────── -->
+  <main class="flex-1 flex items-center justify-center p-4 sm:p-6">
+    <div class="w-full max-w-md">
+
+      <!-- Signup Card -->
+      <div class="glass-card rounded-2xl shadow-2xl overflow-hidden border border-slate-200 dark:border-primary/10">
+
+        <!-- Illustration -->
+        <div class="relative h-48 bg-primary/5 flex items-center justify-center overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-b from-transparent to-background-dark/20"></div>
+          <img
+            alt="Playful recycling characters sorting waste illustration"
+            class="relative z-10 w-full h-full object-cover opacity-90"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwFfYnVOmxaX1dMeV7KgYDVmu_i6kMIDVzLkGrSIp55ZN8OCk_V4fKBuLj3GblWJE5rC9sKorSbIOUbu4hlwHH-gY6SUK6yJFs5ijqC3DMfidCWkaEYd0ybfKbnbYjEt2FuNdHWe26sef9wgf7GnkB7QIriMNu0E7-2q_BcGr2PGQBlmeZo1WjvzGncNTZNQU1V64IVrVAn5sIL5eYfP6hz0ivGlSuHytO-HbsNTQK7vEWOmUvipFusiG-GLYhsK0B_OdvxltqT5U"
+          />
+        </div>
+
+        <!-- Form area -->
+        <div class="p-8">
+          <div class="text-center mb-8">
+            <h1 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">Create Account</h1>
+            <p class="text-slate-500 dark:text-slate-400 text-sm">Join the quest to save the planet and earn rewards.</p>
+          </div>
+
+          <form action="#" class="space-y-4">
+
+            <!-- Full Name -->
+            <div class="space-y-1">
+              <label class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 ml-1" for="fullName">Full Name</label>
+              <div class="relative group">
+                <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">person</span>
+                <input
+                  id="fullName"
+                  class="w-full pl-10 pr-4 py-3 bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all dark:text-white"
+                  placeholder="John Doe"
+                  type="text"
+                />
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="space-y-1">
+              <label class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 ml-1" for="email">Email Address</label>
+              <div class="relative group">
+                <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">mail</span>
+                <input
+                  id="email"
+                  class="w-full pl-10 pr-4 py-3 bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all dark:text-white"
+                  placeholder="name@example.com"
+                  type="email"
+                />
+              </div>
+            </div>
+
+            <!-- Password Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+              <!-- Password -->
+              <div class="space-y-1">
+                <label class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 ml-1" for="password">Password</label>
+                <div class="relative group">
+                  <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">lock</span>
+                  <input
+                    id="password"
+                    class="w-full pl-10 pr-4 py-3 bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all dark:text-white"
+                    placeholder="••••••••"
+                    type="password"
+                  />
+                </div>
+              </div>
+
+              <!-- Confirm Password -->
+              <div class="space-y-1">
+                <label class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 ml-1" for="confirmPassword">Confirm</label>
+                <div class="relative group">
+                  <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">shield</span>
+                  <input
+                    id="confirmPassword"
+                    class="w-full pl-10 pr-4 py-3 bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all dark:text-white"
+                    placeholder="••••••••"
+                    type="password"
+                  />
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Submit -->
+            <button
+              class="w-full mt-6 py-4 rounded-xl bg-gradient-to-r from-accent-yellow to-primary text-slate-900 font-bold text-lg shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center gap-2"
+              type="submit"
+            >
+              <span>Start My Quest</span>
+              <span class="material-symbols-outlined">rocket_launch</span>
+            </button>
+
+          </form>
+
+          <!-- Login link -->
+          <div class="mt-8 text-center">
+            <p class="text-sm text-slate-500 dark:text-slate-400">
+              Already have an account?
+              <a class="text-primary font-bold hover:underline underline-offset-4 ml-1" href="#">Login</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Social signup -->
+      <div class="mt-8 flex items-center justify-center gap-6 opacity-60 hover:opacity-100 transition-opacity">
+        <div class="h-px w-12 bg-slate-300 dark:bg-slate-700"></div>
+        <span class="text-xs font-medium uppercase text-slate-500">or join with</span>
+        <div class="h-px w-12 bg-slate-300 dark:bg-slate-700"></div>
+      </div>
+
+      <div class="mt-4 flex justify-center gap-4">
+        <button class="p-2 rounded-full border border-slate-200 dark:border-slate-800 hover:bg-white dark:hover:bg-slate-800 transition-colors">
+          <img
+            alt="Google logo icon"
+            class="w-5 h-5"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA15f-9LMe0g_4egR47MrftgXCGr-8IpYnJIFZfXCjzl80xl-3jPEMscDJROgxK2dxuLlYax8vndITrG6mppPZVA4g64Jcgu2xW3vcRXsE2zU6_EELOOMEujY2_rtYxn4FcBsz3Y299rBz_ggJ3wo4cCjC13tVMZvVSJZNC2EIN2-HJEKOxcBiDG4hGW_tnY9zstN-9z5qGw4CJqlgWPt8499zeHvP57cNUgjl2_YJUfnezhDfbr8bqaX5_Jqd7TDm8Tez577TzrGk"
+          />
+        </button>
+        <button class="p-2 rounded-full border border-slate-200 dark:border-slate-800 hover:bg-white dark:hover:bg-slate-800 transition-colors">
+          <span class="material-symbols-outlined text-xl">ios</span>
+        </button>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ── FOOTER / BOTTOM NAV ────────────────────────────────────────────────── -->
+  <footer class="w-full border-t border-slate-200 dark:border-primary/10 bg-white/50 dark:bg-slate-900/50 backdrop-blur-md">
+    <div class="max-w-md mx-auto flex justify-around items-center py-3 px-4">
+      <a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+        <span class="material-symbols-outlined">home</span>
+        <span class="text-[10px] font-medium">Home</span>
+      </a>
+      <a class="flex flex-col items-center gap-1 text-primary" href="#">
+        <span class="material-symbols-outlined fill-1">person_add</span>
+        <span class="text-[10px] font-medium">Join</span>
+      </a>
+      <a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+        <span class="material-symbols-outlined">recycling</span>
+        <span class="text-[10px] font-medium">Map</span>
+      </a>
+      <a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+        <span class="material-symbols-outlined">info</span>
+        <span class="text-[10px] font-medium">About</span>
+      </a>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="signup.js"></script>
+
+</body>
+</html>
