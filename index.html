@@ -1,217 +1,158 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>EcoQuest - Join the Journey</title>
-
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-
-  <!-- Tailwind config -->
-  <script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            "primary":          "#2ecc70",
-            "accent-yellow":    "#f1c40f",
-            "background-light": "#f6f8f7",
-            "background-dark":  "#131f18",
-          },
-          fontFamily: {
-            "display": ["Inter", "sans-serif"]
-          },
-          borderRadius: {
-            "DEFAULT": "0.25rem",
-            "lg":      "0.5rem",
-            "xl":      "0.75rem",
-            "2xl":     "1rem",
-            "full":    "9999px"
-          },
-        },
-      },
-    }
-  </script>
-
-  <!-- Custom styles -->
-  <link rel="stylesheet" href="signup.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoQuest – Recycle. Restore. Repeat.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
+<body>
 
-<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col font-display hero-gradient">
+  <div class="cursor" id="cursor"></div>
 
-  <!-- ── HEADER ─────────────────────────────────────────────────────────────── -->
-  <header class="w-full p-6 flex justify-between items-center max-w-7xl mx-auto">
-    <div class="flex items-center gap-2">
-      <span class="material-symbols-outlined text-primary text-3xl">energy_savings_leaf</span>
-      <span class="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100">EcoQuest</span>
+  <!-- ── NAV ────────────────────────────────────────────────────────────── -->
+  <nav>
+    <div class="logo">Eco<span>Quest</span></div>
+    <ul>
+      <li><a href="#how">How It Works</a></li>
+      <li><a href="#guide">Guide</a></li>
+      <li><a href="#join" class="nav-cta">Join the Quest</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── HERO ───────────────────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <div class="hero-content">
+      <div class="hero-tag">🌿 The Recycling Revolution Starts Here</div>
+      <h1>Recycle.<br><em>Restore.</em>Repeat.</h1>
+      <p class="hero-desc">EcoQuest turns everyday recycling into a meaningful mission. Learn what to recycle, reduce waste, and become part of a community rebuilding the planet — one item at a time.</p>
+      <div class="hero-actions">
+        <a href="#join" class="btn-primary">Start Your Quest →</a>
+        <a href="#guide" class="btn-ghost">
+          Explore the Guide
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </a>
+      </div>
     </div>
-    <div class="hidden md:flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
-      <span class="material-symbols-outlined text-primary text-sm">stars</span>
-      <span class="text-xs font-semibold uppercase tracking-wider text-primary">Level 1 Novice</span>
+
+    <div class="hero-visual">
+      <div class="orbit-container">
+        <div class="orbit-ring"></div>
+        <div class="orbit-ring"></div>
+        <div class="orbit-ring"></div>
+        <div class="orbit-item" style="top:0;left:50%;transform:translateX(-50%)">♻️</div>
+        <div class="orbit-item" style="bottom:0;left:50%;transform:translateX(-50%);animation:counterSpinBottom 20s linear infinite reverse">🌱</div>
+        <div class="orbit-item" style="left:0;top:50%;transform:translateY(-50%);animation:counterSpinLeft 14s linear infinite reverse">💧</div>
+        <div class="orbit-item" style="right:0;top:50%;transform:translateY(-50%);animation:counterSpinRight 14s linear infinite">🔋</div>
+        <div class="orbit-center">🌍</div>
+      </div>
     </div>
-  </header>
+  </section>
 
-  <!-- ── MAIN ───────────────────────────────────────────────────────────────── -->
-  <main class="flex-1 flex items-center justify-center p-4 sm:p-6">
-    <div class="w-full max-w-md">
+  <!-- ── STATS ──────────────────────────────────────────────────────────── -->
+  <div class="stats reveal">
+    <div class="stat">
+      <div class="stat-num">2.3B</div>
+      <div class="stat-label">Tons of waste generated globally each year</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">32%</div>
+      <div class="stat-label">Of waste is properly recycled or composted</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">75%</div>
+      <div class="stat-label">Of waste is actually recyclable</div>
+    </div>
+  </div>
 
-      <!-- Signup Card -->
-      <div class="glass-card rounded-2xl shadow-2xl overflow-hidden border border-slate-200 dark:border-primary/10">
+  <!-- ── HOW IT WORKS ───────────────────────────────────────────────────── -->
+  <section class="section" id="how">
+    <div class="section-tag">↳ The Process</div>
+    <h2 class="section-title reveal">Recycling made simple, impactful, and rewarding.</h2>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <div class="step-icon">🔍</div>
+        <h3>Identify Your Waste</h3>
+        <p>Use our smart guide to quickly identify what type of waste you have and how it should be handled in your area.</p>
+      </div>
+      <div class="step reveal" style="transition-delay:0.15s">
+        <div class="step-num">02</div>
+        <div class="step-icon">🗂️</div>
+        <h3>Sort &amp; Prepare</h3>
+        <p>Follow simple preparation steps — rinse, flatten, separate. Proper sorting dramatically increases recycling effectiveness.</p>
+      </div>
+      <div class="step reveal" style="transition-delay:0.3s">
+        <div class="step-num">03</div>
+        <div class="step-icon">📍</div>
+        <h3>Drop Off &amp; Track</h3>
+        <p>Find your nearest collection point and log your contribution. Watch your environmental impact grow over time.</p>
+      </div>
+    </div>
+  </section>
 
-        <!-- Illustration -->
-        <div class="relative h-48 bg-primary/5 flex items-center justify-center overflow-hidden">
-          <div class="absolute inset-0 bg-gradient-to-b from-transparent to-background-dark/20"></div>
-          <img
-            alt="Playful recycling characters sorting waste illustration"
-            class="relative z-10 w-full h-full object-cover opacity-90"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwFfYnVOmxaX1dMeV7KgYDVmu_i6kMIDVzLkGrSIp55ZN8OCk_V4fKBuLj3GblWJE5rC9sKorSbIOUbu4hlwHH-gY6SUK6yJFs5ijqC3DMfidCWkaEYd0ybfKbnbYjEt2FuNdHWe26sef9wgf7GnkB7QIriMNu0E7-2q_BcGr2PGQBlmeZo1WjvzGncNTZNQU1V64IVrVAn5sIL5eYfP6hz0ivGlSuHytO-HbsNTQK7vEWOmUvipFusiG-GLYhsK0B_OdvxltqT5U"
-          />
+  <!-- ── RECYCLING GUIDE ────────────────────────────────────────────────── -->
+  <section class="guide-section" id="guide">
+    <div class="guide-inner">
+      <div class="section-tag">↳ Quick Reference</div>
+      <h2 class="section-title reveal">What can you<br>recycle today?</h2>
+      <div class="categories">
+        <div class="cat-card green reveal">
+          <span class="cat-badge">Always</span>
+          <span class="cat-emoji">📦</span>
+          <h3>Paper &amp; Cardboard</h3>
+          <p>Newspapers, boxes, envelopes. Keep dry and flatten before recycling.</p>
         </div>
-
-        <!-- Form area -->
-        <div class="p-8">
-          <div class="text-center mb-8">
-            <h1 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">Create Account</h1>
-            <p class="text-slate-500 dark:text-slate-400 text-sm">Join the quest to save the planet and earn rewards.</p>
-          </div>
-
-          <form action="#" class="space-y-4">
-
-            <!-- Full Name -->
-            <div class="space-y-1">
-              <label class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 ml-1" for="fullName">Full Name</label>
-              <div class="relative group">
-                <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">person</span>
-                <input
-                  id="fullName"
-                  class="w-full pl-10 pr-4 py-3 bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all dark:text-white"
-                  placeholder="John Doe"
-                  type="text"
-                />
-              </div>
-            </div>
-
-            <!-- Email -->
-            <div class="space-y-1">
-              <label class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 ml-1" for="email">Email Address</label>
-              <div class="relative group">
-                <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">mail</span>
-                <input
-                  id="email"
-                  class="w-full pl-10 pr-4 py-3 bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all dark:text-white"
-                  placeholder="name@example.com"
-                  type="email"
-                />
-              </div>
-            </div>
-
-            <!-- Password Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-
-              <!-- Password -->
-              <div class="space-y-1">
-                <label class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 ml-1" for="password">Password</label>
-                <div class="relative group">
-                  <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">lock</span>
-                  <input
-                    id="password"
-                    class="w-full pl-10 pr-4 py-3 bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all dark:text-white"
-                    placeholder="••••••••"
-                    type="password"
-                  />
-                </div>
-              </div>
-
-              <!-- Confirm Password -->
-              <div class="space-y-1">
-                <label class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 ml-1" for="confirmPassword">Confirm</label>
-                <div class="relative group">
-                  <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">shield</span>
-                  <input
-                    id="confirmPassword"
-                    class="w-full pl-10 pr-4 py-3 bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all dark:text-white"
-                    placeholder="••••••••"
-                    type="password"
-                  />
-                </div>
-              </div>
-
-            </div>
-
-            <!-- Submit -->
-            <button
-              class="w-full mt-6 py-4 rounded-xl bg-gradient-to-r from-accent-yellow to-primary text-slate-900 font-bold text-lg shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center gap-2"
-              type="submit"
-            >
-              <span>Start My Quest</span>
-              <span class="material-symbols-outlined">rocket_launch</span>
-            </button>
-
-          </form>
-
-          <!-- Login link -->
-          <div class="mt-8 text-center">
-            <p class="text-sm text-slate-500 dark:text-slate-400">
-              Already have an account?
-              <a class="text-primary font-bold hover:underline underline-offset-4 ml-1" href="#">Login</a>
-            </p>
-          </div>
+        <div class="cat-card blue reveal" style="transition-delay:0.1s">
+          <span class="cat-badge">Rinse First</span>
+          <span class="cat-emoji">🍾</span>
+          <h3>Glass &amp; Plastic</h3>
+          <p>Bottles, jars, containers. Remove lids and rinse clean before sorting.</p>
+        </div>
+        <div class="cat-card yellow reveal" style="transition-delay:0.2s">
+          <span class="cat-badge">Crush It</span>
+          <span class="cat-emoji">🥫</span>
+          <h3>Metals &amp; Cans</h3>
+          <p>Aluminium cans, tin cans, foil. Crush cans to save space in your bin.</p>
+        </div>
+        <div class="cat-card red reveal" style="transition-delay:0.3s">
+          <span class="cat-badge">Special Drop</span>
+          <span class="cat-emoji">🔌</span>
+          <h3>Electronics</h3>
+          <p>Phones, batteries, cables. Requires special e-waste drop-off. Never bin.</p>
         </div>
       </div>
-
-      <!-- Social signup -->
-      <div class="mt-8 flex items-center justify-center gap-6 opacity-60 hover:opacity-100 transition-opacity">
-        <div class="h-px w-12 bg-slate-300 dark:bg-slate-700"></div>
-        <span class="text-xs font-medium uppercase text-slate-500">or join with</span>
-        <div class="h-px w-12 bg-slate-300 dark:bg-slate-700"></div>
-      </div>
-
-      <div class="mt-4 flex justify-center gap-4">
-        <button class="p-2 rounded-full border border-slate-200 dark:border-slate-800 hover:bg-white dark:hover:bg-slate-800 transition-colors">
-          <img
-            alt="Google logo icon"
-            class="w-5 h-5"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA15f-9LMe0g_4egR47MrftgXCGr-8IpYnJIFZfXCjzl80xl-3jPEMscDJROgxK2dxuLlYax8vndITrG6mppPZVA4g64Jcgu2xW3vcRXsE2zU6_EELOOMEujY2_rtYxn4FcBsz3Y299rBz_ggJ3wo4cCjC13tVMZvVSJZNC2EIN2-HJEKOxcBiDG4hGW_tnY9zstN-9z5qGw4CJqlgWPt8499zeHvP57cNUgjl2_YJUfnezhDfbr8bqaX5_Jqd7TDm8Tez577TzrGk"
-          />
-        </button>
-        <button class="p-2 rounded-full border border-slate-200 dark:border-slate-800 hover:bg-white dark:hover:bg-slate-800 transition-colors">
-          <span class="material-symbols-outlined text-xl">ios</span>
-        </button>
-      </div>
-
     </div>
-  </main>
+  </section>
 
-  <!-- ── FOOTER / BOTTOM NAV ────────────────────────────────────────────────── -->
-  <footer class="w-full border-t border-slate-200 dark:border-primary/10 bg-white/50 dark:bg-slate-900/50 backdrop-blur-md">
-    <div class="max-w-md mx-auto flex justify-around items-center py-3 px-4">
-      <a class="flex flex-col items-center gap-1 text-slate-400" href="#">
-        <span class="material-symbols-outlined">home</span>
-        <span class="text-[10px] font-medium">Home</span>
-      </a>
-      <a class="flex flex-col items-center gap-1 text-primary" href="#">
-        <span class="material-symbols-outlined fill-1">person_add</span>
-        <span class="text-[10px] font-medium">Join</span>
-      </a>
-      <a class="flex flex-col items-center gap-1 text-slate-400" href="#">
-        <span class="material-symbols-outlined">recycling</span>
-        <span class="text-[10px] font-medium">Map</span>
-      </a>
-      <a class="flex flex-col items-center gap-1 text-slate-400" href="#">
-        <span class="material-symbols-outlined">info</span>
-        <span class="text-[10px] font-medium">About</span>
-      </a>
+  <!-- ── CTA ────────────────────────────────────────────────────────────── -->
+  <section class="cta-section" id="join">
+    <h2 class="reveal">Ready to start<br>your <span>EcoQuest?</span></h2>
+    <p class="reveal">Join thousands of people already making a difference in their communities.</p>
+    <div class="cta-buttons reveal">
+      <a href="login.html" class="btn-primary">Create Free Account</a>
+      <a href="#how" class="btn-outline">Learn More</a>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────────────────── -->
+  <footer>
+    <div class="logo">Eco<span>Quest</span></div>
+    <p>© 2025 EcoQuest. Building a cleaner world.</p>
+    <div class="footer-links">
+      <a href="#">About</a>
+      <a href="#">Privacy</a>
+      <a href="#">Contact</a>
     </div>
   </footer>
 
-  <!-- JavaScript -->
-  <script src="signup.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
