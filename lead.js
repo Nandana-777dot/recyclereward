@@ -79,5 +79,5 @@ window.addEventListener('DOMContentLoaded', () => {
 // ── LOG WASTE BUTTON ──────────────────────────────────────────────────────
 
 document.getElementById('btn-log-waste').addEventListener('click', () => {
-  window.location.href = 'logwaste.html';
+  window.location.href = 'logpage.html';
 });
