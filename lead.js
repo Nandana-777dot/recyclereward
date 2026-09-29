@@ -23,6 +23,8 @@ const btnWeekly  = document.getElementById('btn-weekly');
 const btnAllTime = document.getElementById('btn-alltime');
 const bars       = document.querySelectorAll('#bar-chart .bar');
 const labels     = document.querySelectorAll('#bar-chart [data-label]');
+const names      = document.querySelectorAll('#bar-chart .mt-4 p:first-child');
+const places     = document.querySelectorAll('#bar-chart .mt-4 p:last-child');
 
 
 // ── TAB TOGGLE ────────────────────────────────────────────────────────────
