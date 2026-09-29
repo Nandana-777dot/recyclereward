@@ -24,9 +24,11 @@ form.addEventListener('submit', function (e) {
         return;
     }
 
-    // TODO: Replace this with your real API / backend call
-    console.log('Form submitted:', { fullName, email });
-    alert(`Welcome to EcoQuest, ${fullName}! Your quest begins now. 🌿`);
+    // Save the user's name for their EcoQuest profile
+localStorage.setItem('userName', fullName);
+localStorage.setItem('userEmail', email);
+
+alert(`Welcome to EcoQuest, ${fullName}! Your quest begins now. 🌿`);
     
     // Navigate to start.html
     window.location.href = 'start.html';
