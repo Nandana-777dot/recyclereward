@@ -39,13 +39,22 @@ function setActiveTab(active, inactive) {
 function updateBars(data) {
   bars.forEach((bar, i) => {
     bar.style.height = '0%';
-    // Stagger entrance
+
     setTimeout(() => {
       bar.style.height = data[i].height;
     }, i * 80);
   });
+
   labels.forEach((label, i) => {
     label.textContent = data[i].score;
+  });
+
+  names.forEach((name, i) => {
+    name.textContent = data[i].name;
+  });
+
+  places.forEach((place, i) => {
+    place.textContent = data[i].place;
   });
 }
 
